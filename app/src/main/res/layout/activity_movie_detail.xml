@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/ivDetailPoster"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:scaleType="centerCrop" />
+
+        <TextView
+            android:id="@+id/tvDetailTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp" />
+
+        <TextView
+            android:id="@+id/tvDetailGenre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/design_default_color_primary"
+            android:layout_marginTop="4dp" />
+
+        <TextView
+            android:id="@+id/tvDetailDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Select Showtime:"
+            android:textStyle="bold"
+            android:layout_marginTop="24dp" />
+
+        <Spinner
+            android:id="@+id/spShowtimes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp" />
+
+        <EditText
+            android:id="@+id/etSeatNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Seat Number (e.g. A1, B2)"
+            android:layout_marginTop="16dp" />
+
+        <Button
+            android:id="@+id/btnBookTicket"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Book Ticket"
+            android:layout_marginTop="24dp" />
+
+    </LinearLayout>
+</ScrollView>

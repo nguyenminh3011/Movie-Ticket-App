@@ -1,5 +1,6 @@
 package com.example.myapplication.adapters;
 
+import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,7 +41,22 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
     public void onBindViewHolder(@NonNull MovieViewHolder holder, int position) {
         Movie movie = movieList.get(position);
         holder.tvTitle.setText(movie.getTitle());
-        holder.tvGenre.setText(movie.getGenres() != null ? String.join(", ", movie.getGenres()) : "");
+        
+        String genres = "";
+        if (movie.getGenres() != null) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                genres = String.join(", ", movie.getGenres());
+            } else {
+                StringBuilder sb = new StringBuilder();
+                for (int i = 0; i < movie.getGenres().size(); i++) {
+                    sb.append(movie.getGenres().get(i));
+                    if (i < movie.getGenres().size() - 1) sb.append(", ");
+                }
+                genres = sb.toString();
+            }
+        }
+        holder.tvGenre.setText(genres);
+
         holder.tvDuration.setText(movie.getDuration() + " min");
         holder.tvDescription.setText(movie.getDescription());
 
